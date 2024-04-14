@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* colors:{
+  #452a72      #7963a7 #bac3df #6c7fbf #293770
+  darkpurple   purple  light   skyblue  darkBlue
+} */
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+.social-links:hover {
+  background-color: #452a72;
+}
+
+/* ... (your existing CSS styles) */
+
+.fixed-button {
+  position: fixed;
+  bottom: 10%;
+  right: 5%;
+  background-color: #452a72;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.fixed-button:hover {
+  background-color: #0056b3; /* Darker color on hover */
+  transform: scale(1.05); /* Slightly scale up on hover */
+}
+
