@@ -33,9 +33,11 @@ import {
   StatusDropDown,
   handleUnAuthorized,
 } from "../hook/handleUnauthorized";
+import KycImageDialog from "../Components/KycImagesDialog";
 
 const KycTableData = () => {
   const [searchQuery, setSearchQuery] = useState("");
+  const [openImg, setOpenImg] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [sortOrder, setSortOrder] = useState("asc");
   const [noOfPage, setNoOfPage] = useState(0);
@@ -503,19 +505,17 @@ const KycTableData = () => {
                     {/* <div
                       className="w-10 h-10"
                     > */}
-                    <Tooltip content="All Kyc Images">
+                    {item?.kycs && <Tooltip content="All Kyc Images">
                       <IconButton
                         variant="text"
                         color="blue-gray"
-                        onClick={() =>
-                          navigate("/admin/kyc-images", {
-                            state: { kycs: item?.kycs },
-                          })
-                        }
+                        onClick={()=> setOpenImg(!openImg)}
                       >
                         <EyeIcon className="h-5 w-5" />
                       </IconButton>
-                    </Tooltip>
+                    </Tooltip>}
+                    
+                      <KycImageDialog open={openImg} setOpen={setOpenImg} data={item}/>
                     {/* </div> */}
                   </td>
                 </tr>

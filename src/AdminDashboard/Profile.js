@@ -36,6 +36,7 @@ function ProfilePage() {
     useEffect(() => {
         profileGet()
     }, [])
+    console.log(user.avatar)
     return (
         <>
             <EditPassword open={open2} setOpen={setOpen2} />
